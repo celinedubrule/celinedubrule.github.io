@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prism Pro Painting | Interior & Exterior Specialists</title>
+    <!-- FontAwesome for professional service icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-bg: #22282a;       /* Dark slate background matching the card */
+            --light-bg: #dcdcdc;      /* Light grey background matching the back of the card */
+            --text-dark: #22282a;
+            --text-light: #ffffff;
+            /* Rainbow gradient mimicking the brilliant prism logo */
+            --prism-gradient: linear-gradient(135deg, #ff4e50, #f9d423, #20e2d7, #f64f59, #c471ed, #12c2e9);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        header {
+            text-align: center;
+            padding: 5rem 1rem 4rem 1rem;
+            background: radial-gradient(circle at center, #2c3538 0%, var(--dark-bg) 100%);
+            position: relative;
+        }
+
+        /* Pure CSS representation of the custom prism/paintbrush logo */
+        .logo-container {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem auto;
+            position: relative;
+            background: var(--prism-gradient);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            padding: 4px; 
+        }
+
+        .logo-inner {
+            background: var(--dark-bg);
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-inner i {
+            font-size: 2rem;
+            background: var(--prism-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .slogan {
+            font-style: italic;
+            font-size: 1.1rem;
+            opacity: 0.7;
+            letter-spacing: 1px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: inline-block;
+            padding: 0.5rem 2rem;
+            margin-top: 1rem;
+        }
+
+        /* Services Section */
+        .services-section {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 2rem auto 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            flex: 1;
+            min-width: 280px;
+            max-width: 450px;
+            transition: transform 0.3s ease;
+            border-top: 5px solid transparent;
+            border-image: var(--prism-gradient) 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: #2c3538;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .service-card ul {
+            list-style: none;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .service-card ul li {
+            margin: 0.6rem 0;
+            font-size: 1.05rem;
+        }
+
+        .service-card ul li i {
+            font-size: 0.9rem;
+            margin-right: 10px;
+            color: #555;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-section h2 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .owner-title {
+            opacity: 0.8;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 1.5rem 0;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: white;
+            transition: opacity 0.2s;
+        }
+
+        .contact-method:hover {
+            opacity: 0.8;
+        }
+
+        .contact-method i {
+            width: 30px;
+            text-align: center;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--prism-gradient);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.03);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.5;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Responsive design adjustments */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .subtitle { font-size: 1rem; letter-spacing: 2px; }
+            .services-container { gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Brand Showcase -->
+    <header>
+        <div class="logo-container">
+            <div class="logo-inner">
+                <i class="fa-solid fa-paint-roller"></i>
+            </div>
+        </div>
+        <h1>Prism Pro Painting</h1>
+        <div class="subtitle">Interior & Exterior Specialists</div>
+        <div>
+            <span class="slogan">Precision. Protection. Perfection.</span>
+        </div>
+    </header>
+
+    <!-- Services Rendered -->
+    <section class="services-section">
+        <h2>Our Services</h2>
+        <div class="services-container">
+            
+            <!-- Interior Card -->
+            <div class="service-card">
+                <i class="fa-solid fa-paint-roller"></i>
+                <h3>Interior</h3>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Interior Walls</li>
+                    <li><i class="fa-solid fa-check"></i> Detailed Trim Work</li>
+                    <li><i class="fa-solid fa-check"></i> Cabinet Refinishing</li>
+                </ul>
+            </div>
+
+            <!-- Exterior Card -->
+            <div class="service-card">
+                <i class="fa-solid fa-brush"></i>
+                <h3>Exterior</h3>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Durable Exterior Siding</li>
+                    <li><i class="fa-solid fa-check"></i> Stucco Texturing & Painting</li>
+                    <li><i class="fa-solid fa-check"></i> Deck Staining & Sealing</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact & Business Ownership Details -->
+    <section class="contact-section">
+        <h2>Get a Free Estimate</h2>
+        <div class="owner-title">Celine Dubrule — Owner & Principal Painter</div>
+        
+        <div class="contact-info">
+            <a href="tel:2363381867" class="contact-method">
+                <i class="fa-solid fa-phone"></i> 236-338-1867
+            </a>
+            <a href="mailto:celinedubrule@gmail.com" class="contact-method">
+                <i class="fa-solid fa-envelope"></i> celinedubrule@gmail.com
+            </a>
+        </div>
+
+        <a href="tel:2363381867" class="cta-btn">Call Now</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Prism Pro Painting. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
