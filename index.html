@@ -98,7 +98,7 @@
         .services-section {
             background-color: var(--light-bg);
             color: var(--text-dark);
-            padding: 4rem 2rem;
+            padding: 4rem 2rem 3rem 2rem;
             text-align: center;
         }
 
@@ -158,9 +158,72 @@
             color: #555;
         }
 
+        /* Photo Gallery Section */
+        .gallery-section {
+            background-color: #1a1e20;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .gallery-section h2 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            background-color: var(--dark-bg);
+            height: 350px;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+        /* Accent text on image hover */
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            padding: 1.5rem;
+            text-align: left;
+            opacity: 0.9;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
         /* Contact Section */
         .contact-section {
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
             text-align: center;
             max-width: 600px;
             margin: 0 auto;
@@ -238,6 +301,7 @@
             h1 { font-size: 2rem; }
             .subtitle { font-size: 1rem; letter-spacing: 2px; }
             .services-container { gap: 1rem; }
+            .gallery-item { height: 280px; }
         }
     </style>
 </head>
@@ -282,6 +346,39 @@
                     <li><i class="fa-solid fa-check"></i> Stucco Texturing & Painting</li>
                     <li><i class="fa-solid fa-check"></i> Deck Staining & Sealing</li>
                 </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Photo Gallery Portfolio Section -->
+    <section class="gallery-section">
+        <h2>Our Recent Projects</h2>
+        <div class="gallery-grid">
+            
+            <div class="gallery-item">
+                <img src="IMG_7395.jpg" alt="Exterior Transformation Daytime">
+                <div class="gallery-overlay"><p>Exterior Siding & Trim</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="IMG_7350.JPG" alt="Exterior Transformation Night view">
+                <div class="gallery-overlay"><p>Precision Architectural Coating</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="FullSizeRender.jpeg" alt="Finished Gables and Trim Work">
+                <div class="gallery-overlay"><p>Flawless Peak Finish</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="IMG_1038.jpeg" alt="Gable painting in progress">
+                <div class="gallery-overlay"><p>Meticulous Preparation & Coating</p></div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="IMG_0126.jpeg" alt="Residential exterior setup">
+                <div class="gallery-overlay"><p>Safety & Protection On Site</p></div>
             </div>
 
         </div>
